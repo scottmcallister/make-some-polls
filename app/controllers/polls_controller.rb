@@ -7,9 +7,20 @@ class PollsController < ApplicationController
     @poll = Poll.new
   end
 
+  def create
+    @poll = Poll.new(poll_params)
+    if @poll.save
+      flash[:success] = 'Poll was created!'
+      redirect_to polls_path
+    else
+      render 'new'
+    end
+  end
+
   private
 
   def poll_params
-    params.require(:poll).permit(:topic)
+    params.require(:poll).permit(:topic, vote_options_attributes: [:id, :title, :_destroy])
   end
+
 end
