@@ -1,0 +1,10 @@
+<%= form_for @poll do |f| %>
+  <%= render 'shared/errors', object: @poll %>
+
+  <div class="form-group">
+    <%= f.label :topic %>
+    <%= f.text_area :topic, rows: 3, required: true, class: 'form-control' %>
+  </div>
+
+  <%= f.submit 'Create', class: 'btn btn-primary btn-lg' %>
+<% end %>
