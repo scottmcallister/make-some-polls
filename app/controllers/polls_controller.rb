@@ -21,6 +21,10 @@ class PollsController < ApplicationController
     @poll = Poll.find_by_id(params[:id])
   end
 
+  def show
+    @poll = Poll.find_by_id(params[:id])
+  end
+
   def update
     @poll = Poll.find_by_id(params[:id])
     if @poll.update_attributes(poll_params)

@@ -53,3 +53,6 @@ gem 'bootstrap-sass'
 # Add Cocoon for dynamic form generation
 gem 'jquery-turbolinks'
 gem "cocoon"
+
+# Add oath support for Facebook
+gem 'omniauth-facebook'
