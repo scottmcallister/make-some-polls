@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160812210235) do
+ActiveRecord::Schema.define(version: 20160812225211) do
 
   create_table "polls", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "topic",      limit: 65535
@@ -30,10 +30,23 @@ ActiveRecord::Schema.define(version: 20160812210235) do
   create_table "vote_options", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
     t.integer  "poll_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "votes_count", default: 0, null: false
     t.index ["poll_id"], name: "index_vote_options_on_poll_id", using: :btree
   end
 
+  create_table "votes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "vote_option_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["user_id"], name: "index_votes_on_user_id", using: :btree
+    t.index ["vote_option_id", "user_id"], name: "index_votes_on_vote_option_id_and_user_id", unique: true, using: :btree
+    t.index ["vote_option_id"], name: "index_votes_on_vote_option_id", using: :btree
+  end
+
   add_foreign_key "vote_options", "polls"
+  add_foreign_key "votes", "users"
+  add_foreign_key "votes", "vote_options"
 end

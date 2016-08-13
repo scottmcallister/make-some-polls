@@ -22,7 +22,7 @@ class PollsController < ApplicationController
   end
 
   def show
-    @poll = Poll.find_by_id(params[:id])
+    @poll = Poll.includes(:vote_options).find_by_id(params[:id])
   end
 
   def update

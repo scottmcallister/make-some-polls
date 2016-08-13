@@ -56,3 +56,6 @@ gem "cocoon"
 
 # Add oath support for Facebook
 gem 'omniauth-facebook'
+
+# Add counter culture for query caching
+gem 'counter_culture', '~> 0.1.23'
