@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get '/auth/failure', to: 'sessions#auth_fail'
   get '/sign_out', to: 'sessions#destroy', as: :sign_out
   resources :votes, only: [:create]
+  resources :users, only: [:show]
 end
