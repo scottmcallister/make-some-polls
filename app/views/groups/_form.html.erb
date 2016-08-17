@@ -1,0 +1,9 @@
+<%= form_for @group do |f| %>
+  <%= render 'shared/errors', object: @group %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_area :name, rows: 3, required: true, class: 'form-control' %>
+  </div>
+  <%= f.submit 'Create', class: 'btn btn-primary btn-lg' %>
+<% end %>

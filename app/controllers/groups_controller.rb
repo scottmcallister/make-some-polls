@@ -1,4 +1,4 @@
-class GroupController < ApplicationController
+class GroupsController < ApplicationController
   def index
     @groups = Group.all
   end
@@ -47,8 +47,8 @@ class GroupController < ApplicationController
 
   private
 
-  def poll_params
-    params.require(:group).permit(:title)
+  def group_params
+    params.require(:group).permit(:name)
   end
 
 end
