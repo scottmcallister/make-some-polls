@@ -4,8 +4,16 @@
       <%= link_to image_tag("icon-sm.png"), root_path%>
     </div>
     <ul class="nav navbar-nav">
-      <li><%= link_to 'Add poll', new_poll_path %></li>
-      <li><%= link_to 'Add group', new_group_path %></li>
+      <li>
+        <%= link_to new_poll_path do %>
+          <i class="fa fa-bar-chart"></i> Polls
+        <% end %>
+      </li>
+      <li>
+        <%= link_to new_group_path do%>
+          <i class="fa fa-users"></i> Groups
+        <% end %>
+      </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <% if current_user %>

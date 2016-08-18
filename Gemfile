@@ -50,6 +50,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Use Twitter Bootstrap for styles
 gem 'bootstrap-sass'
+
+# Use Font Awesome for icons
+gem "font-awesome-rails"
+
 # Add Cocoon for dynamic form generation
 gem 'jquery-turbolinks'
 gem "cocoon"
