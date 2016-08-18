@@ -1,11 +1,8 @@
-<% content_for(:page_header) {"Participate in our polls right now!"} %>
+<% content_for(:page_header) {"Our groups"} %>
 <% @groups.each do |group| %>
   <div class="well">
     <h2><%= group.name %></h2>
-    <div class="btn-group">
-      <%= link_to 'Edit', edit_poll_path(poll), class: 'btn btn-default' %>
-    </div>
-
-
-
+    <button class="btn btn-primary">Join</button>
+    <button class="btn btn-default">Info</button>
+  </div>
 <% end %>
