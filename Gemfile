@@ -58,6 +58,9 @@ gem "font-awesome-rails"
 gem 'jquery-turbolinks'
 gem "cocoon"
 
+# Use devise for users and authentication
+gem 'devise'
+
 # Add oath support for Facebook
 gem 'omniauth-facebook'
 

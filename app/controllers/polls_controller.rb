@@ -1,4 +1,5 @@
 class PollsController < ApplicationController
+  before_filter :authenticate_user!
   def index
     @polls = Poll.all
   end
