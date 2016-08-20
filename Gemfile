@@ -49,7 +49,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Use Twitter Bootstrap for styles
-gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.0.0.alpha3.1'
 
 # Use Font Awesome for icons
 gem "font-awesome-rails"
