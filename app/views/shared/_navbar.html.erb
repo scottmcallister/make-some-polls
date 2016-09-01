@@ -1,30 +1,31 @@
 <% if user_signed_in? %>
-  <div class="navbar navbar-inverse">
+  <nav class="navbar navbar-fixed-top navbar-light bg-info">
     <div class="container">
-      <div class="navbar-header">
-        <%= link_to image_tag("icon-sm.png"), root_path%>
+      <div class="clearfix">
+        <button class="navbar-toggler pull-xs-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#bd-main-nav" aria-controls="bd-main-nav" aria-expanded="false" aria-label="Toggle navigation">
+          ☰
+        </button>
       </div>
-      <ul class="nav navbar-nav">
-        <li>
-          <%= link_to new_poll_path do %>
-            <i class="fa fa-bar-chart"></i> Polls
+      <div class="collapse navbar-toggleable-xs" id="bd-main-nav">
+        <ul class="nav navbar-nav">
+          <li class="nav-item">
+            <%= link_to new_group_path do%>
+              <i class="fa fa-users"></i> Groups
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to new_poll_path do %>
+              <i class="fa fa-bar-chart"></i> Polls
+            <% end %>
+          </li>
+          <% if current_user %>
+            <li class="nav-item"><%= link_to 'Profile', user_path(current_user) %></li>
+            <li class="nav-item"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li class="nav-item"><%= link_to 'Sign in', '/users/sign_in' %></li>
           <% end %>
-        </li>
-        <li>
-          <%= link_to new_group_path do%>
-            <i class="fa fa-users"></i> Groups
-          <% end %>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <% if current_user %>
-          <li><%= image_tag current_user.image_url, alt: current_user.name, style: 'width:' %></li>
-          <li><%= link_to 'Profile', user_path(current_user) %></li>
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-        <% else %>
-          <li><%= link_to 'Sign in', '/users/sign_in' %></li>
-        <% end %>
-      </ul>
+        </ul>
+      </div>
     </div>
-  </div>
+  </nav>
 <% end %>
