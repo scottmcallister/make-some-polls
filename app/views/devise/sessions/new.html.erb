@@ -3,6 +3,9 @@
     <h2>Log in</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-signin") do |f| %>
+    <%- flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, id: "flash_#{name}" %>
+    <%- end -%>
       <div class="field form-group">
         <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>
       </div>
