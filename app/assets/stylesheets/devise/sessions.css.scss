@@ -3,3 +3,22 @@ body{
   background-color:#333;
   text-align: center;
 }
+
+.login-form{
+  max-width: 500px;
+  margin:auto;
+  margin-top:50px;
+  background-color:#5a5a5a;
+  padding:15px;
+  border-radius:5px
+}
+.login-form a{
+  color:#2c9ce9;
+}
+.login-form a:hover{
+  color:#2c9ce9;
+  text-decoration:underline;
+}
+.links{
+  padding-top:10px;
+}
