@@ -1,7 +1,6 @@
 body{
   color: #ffffff;
   background-color:#333;
-  text-align: center;
 }
 
 .login-form{
@@ -10,7 +9,7 @@ body{
   margin-top:50px;
   background-color:#5a5a5a;
   padding:15px;
-  border-radius:5px
+  border-radius:5px;
 }
 .login-form a{
   color:#2c9ce9;
@@ -21,4 +20,15 @@ body{
 }
 .links{
   padding-top:10px;
+}
+.site-wrapper .container{
+  max-width:500px;
+}
+h2{
+  text-align: center;
+}
+form.button_to{
+  width:100%;
+  text-align: center;
+  padding-top:30px;
 }

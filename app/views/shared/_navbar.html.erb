@@ -6,7 +6,7 @@
           ☰
         </button>
       </div>
-      <div class="collapse navbar-toggleable-xs" id="bd-main-nav">
+      <div class="collapse navbar-toggleable-xs pull-right" id="bd-main-nav">
         <ul class="nav navbar-nav">
           <li class="nav-item">
             <%= link_to new_group_path, class: "nav-link" do%>
@@ -20,7 +20,7 @@
           </li>
           <% if current_user %>
             <li class="nav-item">
-              <%= link_to user_path(current_user), class: "nav-link" do%>
+              <%= link_to '/users/edit', class: "nav-link" do%>
                 <i class="fa fa-user"></i> Profile
               <% end %>
             </li>
