@@ -1,0 +1,9 @@
+/* line 1, /Users/scott/Documents/Dev/Ruby/make-some-polls/app/assets/stylesheets/polls.css.scss */
+.site-wrapper .container {
+  max-width: 600px;
+}
+
+/* line 4, /Users/scott/Documents/Dev/Ruby/make-some-polls/app/assets/stylesheets/polls.css.scss */
+h2 {
+  text-align: center;
+}

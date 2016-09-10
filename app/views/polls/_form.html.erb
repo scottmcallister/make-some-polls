@@ -1,23 +1,27 @@
-<%= form_for @poll do |f| %>
-  <%= render 'shared/errors', object: @poll %>
+<%= form_for @poll, class: "form-horizontal" do |f| %>
+  <div class="container">
+    <%= render 'shared/errors', object: @poll %>
 
-  <div class="form-group">
-    <%= f.label :topic %>
-    <%= f.text_area :topic, rows: 3, required: true, class: 'form-control' %>
-  </div>
+    <div class="form-group">
+      <%= f.text_area :topic, rows: 1, required: true, class: 'form-control', placeholder: "Poll topic" %>
+    </div>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">Options</div>
-    <div class="panel-body">
-      <%= f.fields_for :vote_options do |options_form| %>
-        <%= render 'vote_option_fields', f: options_form %>
-      <% end %>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <%= f.fields_for :vote_options do |options_form| %>
+          <%= render 'vote_option_fields', f: options_form %>
+        <% end %>
 
-      <div class="links">
-        <%= link_to_add_association 'add option', f, :vote_options %>
+        <div class="links">
+          <%= link_to_add_association f, :vote_options, class: "btn btn-info" do%>
+            Add Option +
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
 
-  <%= f.submit 'Create', class: 'btn btn-primary btn-lg' %>
+    <p class="text-xs-center" style="padding-top:40px;">
+      <%= f.submit 'Create Poll', class: 'btn btn-primary' %>
+    </p>
+  </div>
 <% end %>

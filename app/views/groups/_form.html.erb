@@ -3,7 +3,9 @@
 
   <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_area :name, rows: 3, required: true, class: 'form-control' %>
+    <%= f.text_area :name, rows: 1, required: true, class: 'form-control' %>
   </div>
-  <%= f.submit 'Create', class: 'btn btn-primary btn-lg' %>
+  <p class="text-center">
+    <%= f.submit 'Create', class: 'btn btn-primary' %>
+  </p>
 <% end %>
