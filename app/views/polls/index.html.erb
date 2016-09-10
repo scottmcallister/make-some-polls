@@ -1,14 +1,10 @@
-<h2>Participate In Our Polls</h2>
-<% @polls.each do |poll| %>
-  <div class="well">
-    <h4><%= poll.topic %> <small>(voted: <%= poll.votes_summary %>)</small></h4>
-    <!-- TODO: show voting results -->
-    <p>
-      <% if current_user %>
-        <%= link_to 'Vote Now', poll_path(poll), class: 'btn btn-primary btn-lg block' %>
-      <% else %>
-        Please sign in via <%= link_to 'Facebook', '/auth/facebook' %> to participate in this poll.
-      <% end %>
-    </p>
-  </div>
-<% end %>
+<div class="container">
+  <h2>Participate In Our Polls</h2>
+  <% @polls.each do |poll| %>
+    <div class="well">
+      <h4><%= poll.topic %> <small>(voted: <%= poll.votes_summary %>)</small></h4>
+      <!-- TODO: show voting results -->
+      <%= render 'voting_form', poll: poll %>
+    </div>
+  <% end %>
+</div>
