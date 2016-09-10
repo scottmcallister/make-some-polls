@@ -1,8 +1,10 @@
 <% content_for(:page_header) {"Share your opinion"} %>
-
+<div class="container">
 <h2><%= @poll.topic %></h2>
 
 <%= render 'voting_form' %>
+
+</div>
 
 <script data-turbolinks-track="true">
   $(document).ready(function() {
