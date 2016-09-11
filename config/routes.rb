@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   authenticated :user do
-    root 'polls#index', as: :authenticated_root
+    root 'users#show', as: :authenticated_root
   end
 
   root "home#index"

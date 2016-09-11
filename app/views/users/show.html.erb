@@ -1,13 +1,25 @@
 
 <div class="container">
-  <h2>Participation in polls</h2>
-
-  <% @user.vote_options.each do |option| %>
-    <div class="panel panel-default">
-      <div class="panel-heading"><%= link_to option.poll.topic, poll_path(option.poll) %></div>
-      <div class="panel-body">
-        <%= option.title %>
-      </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <h2 class="text-xs-center">Polls You've Voted On</h2>
+      <% @user.vote_options.each do |option| %>
+        <div class="panel panel-default">
+          <div class="panel-heading">Poll title: <%= link_to option.poll.topic, poll_path(option.poll) %></div>
+          <div class="panel-body">
+            Your vote: <%= option.title %>
+          </div>
+        </div>
+      <% end %>
+      <% if @user.vote_options.count == 0 %>
+        <p>You haven't voted yet!</p>
+      <% end %>
     </div>
-  <% end %>
+    <div class="col-sm-6">
+      <h2 class="text-xs-center">Your Polls</h2>
+      <% @polls.each do |poll| %>
+        <p><%= poll.topic %> <small>(voted: <%= poll.votes_summary %>)</small></p>
+      <% end %>
+    </div>
+  </div>
 </div>

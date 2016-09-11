@@ -1,0 +1,30 @@
+/* line 1, /Users/scott/Documents/Dev/Ruby/make-some-polls/app/assets/stylesheets/polls.css.scss */
+.site-wrapper .container {
+  max-width: 600px;
+}
+
+/* line 4, /Users/scott/Documents/Dev/Ruby/make-some-polls/app/assets/stylesheets/polls.css.scss */
+h2 {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+/* line 8, /Users/scott/Documents/Dev/Ruby/make-some-polls/app/assets/stylesheets/polls.css.scss */
+.nested-fields {
+  padding: 15px 0px;
+}
+
+/* line 11, /Users/scott/Documents/Dev/Ruby/make-some-polls/app/assets/stylesheets/polls.css.scss */
+#voting_form {
+  text-align: center;
+}
+
+/* line 14, /Users/scott/Documents/Dev/Ruby/make-some-polls/app/assets/stylesheets/polls.css.scss */
+progress {
+  width: 100%;
+}
+
+/* line 17, /Users/scott/Documents/Dev/Ruby/make-some-polls/app/assets/stylesheets/polls.css.scss */
+.well {
+  text-align: center;
+}

@@ -1,6 +1,7 @@
 <%= form_for @poll, class: "form-horizontal" do |f| %>
   <div class="container">
     <%= render 'shared/errors', object: @poll %>
+    <input type="hidden" name="user_id" value="<%= current_user.id %>">
 
     <div class="form-group">
       <%= f.text_area :topic, rows: 1, required: true, class: 'form-control', placeholder: "Poll topic" %>
