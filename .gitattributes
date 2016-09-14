@@ -1,2 +1,3 @@
 *.rb linguist-language=Ruby
 *.erb lunguist-language=Ruby
+app/assets/* linguist-vendored
